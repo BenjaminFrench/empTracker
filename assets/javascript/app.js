@@ -30,11 +30,11 @@ $(document).ready(function () {
         EmpRole = snapshot.val().EmpRole;
         EmpRate = snapshot.val().EmpRate;
 
-        let totalBilled = months * EmpRate;
-        let startDate = moment(EmpDate);
         let currentDate = moment();
+        let startDate = moment(EmpDate, "DD/MM/YYYY");
         let months = currentDate.diff(startDate, 'months');
-
+        let totalBilled = months * EmpRate;
+        
         let print = `
       <tr>
             <td scope="row">${EmpName}</td>
