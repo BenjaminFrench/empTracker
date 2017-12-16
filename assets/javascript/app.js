@@ -25,15 +25,15 @@ $(document).ready(function () {
         // Log everything that's coming out of snapshot
         console.log(snapshot.val());
         // Change the HTML to reflect
-        let totalBilled = 0;
-        let startDate = 0;
-        let currentDate = 0;
-        let months = currentDate - startDate;
-
         EmpName = snapshot.val().EmpName;
         EmpDate = snapshot.val().EmpDate;
         EmpRole = snapshot.val().EmpRole;
         EmpRate = snapshot.val().EmpRate;
+
+        let totalBilled = months * EmpRate;
+        let startDate = moment(EmpDate);
+        let currentDate = moment();
+        let months = currentDate.diff(startDate, 'months');
 
         let print = `
       <tr>
