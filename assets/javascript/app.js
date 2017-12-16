@@ -22,10 +22,6 @@ var EmpDate = "";
 ref.on("child_added", function (snapshot) {
     // Log everything that's coming out of snapshot
     console.log(snapshot.val());
-    console.log(snapshot.val().name);
-    console.log(snapshot.val().role);
-    console.log(snapshot.val().start);
-    console.log(snapshot.val().rate);
     // Change the HTML to reflect
     let totalBilled = 0;
     let startDate = 0;
@@ -33,11 +29,11 @@ ref.on("child_added", function (snapshot) {
     let months = currentDate - startDate;
     let print = `
       <tr>
-            <td scope="row">${EmpName}</td>
-            <td>${EmpRole}</td>
-            <td>${EmpDate}</td>
+            <td scope="row">${snapshot.val().EmpName}</td>
+            <td>${snapshot.val().EmpRole}</td>
+            <td>${snapshot.val().EmpDate}</td>
             <td>${months}</td>
-            <td>${EmpRate}</td>
+            <td>${snapshot.val().EmpRate}</td>
             <td>${totalBilled}</td>
         </tr>`;
     $('#emp-table-body').append(print);
