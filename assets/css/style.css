@@ -12,3 +12,15 @@ th,
 td {
   font-family: "Open Sans";
 }
+
+.jumbotron {
+  background: #114b5f;
+}
+
+.card-header {
+  background: #1a936f;
+}
+
+.btn-primary {
+  background: #114b5f;
+}
