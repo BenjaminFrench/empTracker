@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Train Scheduler</title>
+	<title>Employee tracker</title>
 	<!-- meta -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,8 +21,7 @@
 			<div class="col-12">
 				<div class="jumbotron jumbotron-fluid">
   					<div class="container">
-   						<h1 class="display-3">Transcontinental Train Schedule</h1>
-    					<p class="lead">Visit your country and see what a <strong>WONDERLAND</strong> it is!</p>
+   						<h1 class="display-3">Employee tracker</h1>
   					</div>
 				</div>
 			</div>
@@ -31,7 +30,7 @@
 			<div class="col-12">
 				<div class="card bg-light border-dark mb-3">
   					<div class="card-header text-white bg-primary">
-    					Current Train Schedule
+    					Employee list
   					</div>
   					<div class="card body">
   						<table class="table table-hover">
@@ -51,28 +50,6 @@
       								<td id="freq-1">30</td>
       								<td id="next-1">HH:mm</td>
       								<td id="away-1">min</td>
-
-    							</tr>
-    							<tr>
-      								<td scope="row" id="train-2">Northern Pacific</td>
-      								<td id="dest-2">Yellowstone National Park</td>
-      								<td id="freq-2">25</td>
-      								<td id="next-2">HH:mm</td>
-      								<td id="away-2">min</td>
-    							</tr>
-    							<tr>
-      								<td scope="row" id="train-3">Union Pacific</td>
-      								<td id="dest-3">Grand Teton National Park</td>
-      								<td id="freq-3">35</td>
-      								<td id="next-3" >HH:mm</td>
-      								<td id="away-3">min</td>
-    							</tr>
-    							<tr>
-      								<td scope="row" id="train-4">Southern Pacific</td>
-      								<td id="dest-4" >Yosemite National Park</td>
-      								<td id="freq-4">20</td>
-      								<td id="next-4">HH:mm</td>
-      								<td id="away-4">min</td>
     							</tr>
   							</tbody>
 						</table>
@@ -84,24 +61,24 @@
 			<div class="col-12">
 				<div class="card bg-light border-dark mb-3">
   					<div class="card-header text-white bg-primary">
-    					Add Train
+    					Add Employee
   					</div>
   					<div class="card body" style="padding:0 8px 0 8px">
   						<form>
   							<div class="form-group">
-    							<label class="col-form-label" for="trainName">Train Name</label>
+    							<label class="col-form-label" for="trainName">Employee Name</label>
     							<input type="text" class="form-control" id="trainName" placeholder="line">
   							</div>
   							<div class="form-group">
-    							<label class="col-form-label" for="destination">Destination</label>
+    							<label class="col-form-label" for="destination">Role</label>
     							<input type="text" class="form-control" id="destination" placeholder="Train Station">
   							</div>
   							<div class="form-group">
-    							<label class="col-form-label" for="firstTrain">First Train time (HH:mm - military time)</label>
+    							<label class="col-form-label" for="firstTrain">Start Date</label>
     							<input type="text" class="form-control" id="firstTrain" placeholder="HH:mm">
   							</div>
   							<div class="form-group">
-    							<label class="col-form-label" for="frequency">Frequency (min)</label>
+    							<label class="col-form-label" for="frequency">Monthly Rate</label>
     							<input type="text" class="form-control" id="frequency" placeholder="min">
   							</div>
 						</form>
