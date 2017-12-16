@@ -27,13 +27,19 @@ ref.on("child_added", function (snapshot) {
     let startDate = 0;
     let currentDate = 0;
     let months = currentDate - startDate;
+
+    EmpName = snapshot.val().EmpName;
+    EmpDate = snapshot.val().EmpDate;
+    EmpRole = snapshot.val().EmpRole;
+    EmpRate = snapshot.val().EmpRate;
+    
     let print = `
       <tr>
-            <td scope="row">${snapshot.val().EmpName}</td>
-            <td>${snapshot.val().EmpRole}</td>
-            <td>${snapshot.val().EmpDate}</td>
+            <td scope="row">${EmpName}</td>
+            <td>${EmpRole}</td>
+            <td>${EmpDate}</td>
             <td>${months}</td>
-            <td>${snapshot.val().EmpRate}</td>
+            <td>${EmpRate}</td>
             <td>${totalBilled}</td>
         </tr>`;
     $('#emp-table-body').append(print);
