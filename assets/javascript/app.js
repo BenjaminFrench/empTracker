@@ -13,23 +13,11 @@ const database = firebase.database();
 const ref = database.ref();
 
 // Initial Values
-var name = "";
-var role = "";
-var rate = 0;
-var start = "";
+var EmpName = "";
+var EmpRole = "";
+var EmpRate = 0;
+var EmpDate = "";
 
-
-name = $("#EmpName").val().trim();
-role = $("#EmpRole").val().trim();
-rate = $("#EmpRate").val().trim();
-start = $("#EmpDate").val().trim();
-
-ref.push({
-    name,
-    role,
-    rate,
-    start
-});
 
 ref.on("child_added", function (snapshot) {
     // Log everything that's coming out of snapshot
@@ -41,14 +29,15 @@ ref.on("child_added", function (snapshot) {
     // Change the HTML to reflect
     let totalBilled = 0;
     let startDate = 0;
-    let months = currentDate - start;
+    let currentDate = 0;
+    let months = currentDate - startDate;
     let print = `
       <tr>
-            <td scope="row">${name}</td>
-            <td>${role}</td>
-            <td>${start}</td>
-            <td>${}</td>
-            <td>${rate}</td>
+            <td scope="row">${EmpName}</td>
+            <td>${EmpRole}</td>
+            <td>${EmpDate}</td>
+            <td>${months}</td>
+            <td>${EmpRate}</td>
             <td>${totalBilled}</td>
         </tr>`;
     $('emp-table-body').append(print);
@@ -58,20 +47,15 @@ ref.on("child_added", function (snapshot) {
 });
 
 $('add-employee-btn').on('click', function () {
-    let EmpName = $("#EmpName").val();
-    let EmpRole = $("#EmpRole").val();
-    let EmpDate = $("#EmpDate").val();
-    let EmpRate = $("#EmpRate").val();
+    EmpName = $("#EmpName").val().trim();
+    EmpRole = $("#EmpRole").val().trim();
+    EmpDate = $("#EmpDate").val().trim();
+    EmpRate = $("#EmpRate").val().trim();
 
-
-    // $("#emp-table-body").append(`
-    // <tr>
-    //     <td></td>
-    //     <td></td>
-    //     <td></td>
-    //     <td></td>
-    //     <td></td>
-    //     <td></td>
-    // </tr>
-    // `)
+    ref.push({
+        EmpName,
+        EmpRole,
+        EmpDate,
+        EmpRate
+    });
 });
