@@ -40,13 +40,15 @@ ref.on("child_added", function (snapshot) {
             <td>${EmpRate}</td>
             <td>${totalBilled}</td>
         </tr>`;
-    $('emp-table-body').append(print);
+    $('#emp-table-body').append(print);
     // Handle the errors
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
 });
 
-$('add-employee-btn').on('click', function () {
+$('#add-employee-btn').on('click', function (event) {
+    event.preventDefault();
+
     EmpName = $("#EmpName").val().trim();
     EmpRole = $("#EmpRole").val().trim();
     EmpDate = $("#EmpDate").val().trim();
