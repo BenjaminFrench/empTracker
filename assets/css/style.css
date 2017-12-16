@@ -21,6 +21,18 @@ td {
   background: #1a936f;
 }
 
+.form-group {
+  margin-bottom: 0;
+}
+
 .btn-primary {
   background: #114b5f;
+  border: white;
+  margin-top: 0.6rem;
+}
+
+.btn-primary:hover {
+  background: #114b5f;
+  opacity: 0.9;
+  cursor: pointer;
 }
